@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-labelledby="title desc">
+  <title id="title">Yung-Yu Chen in Times Square</title>
+  <desc id="desc">Stylized illustration of Yung-Yu Chen standing in Times Square inspired by the original trip photo.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="street" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4c1d95" />
+      <stop offset="100%" stop-color="#1e40af" />
+    </linearGradient>
+    <linearGradient id="jacket" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1f2933" />
+      <stop offset="100%" stop-color="#0b132b" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#sky)" />
+  <g opacity="0.8">
+    <rect x="60" y="80" width="120" height="420" fill="#7dd3fc" rx="12" />
+    <rect x="420" y="60" width="120" height="480" fill="#fb7185" rx="12" />
+    <rect x="240" y="40" width="120" height="460" fill="#fbbf24" rx="12" />
+    <rect x="120" y="140" width="90" height="250" fill="#34d399" rx="10" />
+    <rect x="390" y="160" width="90" height="240" fill="#f472b6" rx="10" />
+  </g>
+  <path d="M0 520h600v280H0z" fill="url(#street)" />
+  <g transform="translate(260 340)">
+    <path d="M45 360H-45l-35 80h160z" fill="#e2e8f0" opacity="0.4" />
+    <rect x="-30" y="0" width="60" height="120" fill="#fed7aa" rx="28" />
+    <circle cx="0" cy="-40" r="45" fill="#f8fafc" />
+    <circle cx="0" cy="-40" r="40" fill="#fde68a" />
+    <path d="M-20 -30h40v60h-40z" fill="#fcd34d" />
+    <path d="M-45 60h90v160h-90z" fill="url(#jacket)" />
+    <rect x="-45" y="220" width="40" height="140" fill="#1e293b" />
+    <rect x="5" y="220" width="40" height="140" fill="#1e293b" />
+    <rect x="-45" y="360" width="40" height="20" fill="#e2e8f0" />
+    <rect x="5" y="360" width="40" height="20" fill="#e2e8f0" />
+    <rect x="-60" y="120" width="120" height="60" fill="#94a3b8" opacity="0.4" />
+  </g>
+</svg>
