@@ -305,6 +305,61 @@ ul.highlights {
   margin-top: 0.75rem;
 }
 
+.meta-row--education {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  align-items: center;
+}
+
+.meta-row--education .location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.meta-row--education .location::before {
+  content: "📍";
+}
+
+.meta-row--education .period {
+  font-weight: 500;
+}
+
+.publications {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.publications__label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-highlight);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.publications__list {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.35rem;
+  color: var(--text-secondary);
+}
+
+.publications__list a {
+  color: var(--text-highlight);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.publication-outlet {
+  color: var(--text-secondary);
+}
+
 .highlights-section .section-header {
   align-items: center;
 }

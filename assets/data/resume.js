@@ -3,7 +3,7 @@ export const resume = {
     name: "Yung-Yu (Denny) Chen",
     title: "Senior Software Engineer",
     summary:
-      "Senior software engineer crafting resilient backend and distributed systems for identity, data, and cloud experiences across Europe and Asia.",
+      "Senior software engineer crafting resilient backend and distributed systems for identity, data, and cloud experiences across Europe and North America.",
     location: "Berlin, Germany",
     photo: {
       src: "assets/img/profile-times-square.svg",
@@ -82,30 +82,6 @@ export const resume = {
           "Customer-facing API: Delivered highly concurrent and thread-safe features for listing ingestion services, backed by extensive unit, integration, and functional testing.",
         ],
       },
-      {
-        company: "Gogoro",
-        title: "Senior Software Engineer",
-        location: "Taipei, Taiwan",
-        period: "2016 – 2018",
-        headline: "Scaling identity for smart mobility",
-        highlights: [
-          "Architected reusable authentication services for connected scooters, cutting release cycles from monthly to weekly.",
-          "Delivered enterprise-grade user management for global partners, ensuring compliance across APAC.",
-          "Drove adoption of IaC practices, simplifying regional launches and operational readiness.",
-        ],
-      },
-      {
-        company: "Trend Micro",
-        title: "Software Engineer",
-        location: "Taipei, Taiwan",
-        period: "2015 – 2016",
-        headline: "Securing SaaS identity foundations",
-        highlights: [
-          "Built identity federation and SSO capabilities for enterprise security products with SAML and OAuth integrations.",
-          "Implemented role-based access controls and auditing for high-scale customers in finance and manufacturing.",
-          "Collaborated with global teams to certify compliance for ISO 27001 audits.",
-        ],
-      },
     ],
   },
   skills: {
@@ -146,7 +122,24 @@ export const resume = {
         location: "Bonn, Germany",
         period: "2014 – 2016",
         summary:
-          "Specialized in distributed systems, dependable computing, and large-scale data processing.",
+          "Specialized in robotics, knowledge graph embeddings, and dependable distributed systems.",
+        publications: [
+          {
+            title: "Multi-Robot Task Allocation via Attention-based Deep Reinforcement Learning",
+            href: "https://ieeexplore.ieee.org/document/9713947",
+            outlet: "IEEE Transactions on Robotics",
+          },
+          {
+            title: "SMiLE: Situated Multi-Modal Learning from Explanation",
+            href: "https://aclanthology.org/2021.naacl-main.202.pdf",
+            outlet: "NAACL 2021",
+          },
+          {
+            title: "Scalable Question Answering over Multimedia Knowledge Graphs",
+            href: "https://arxiv.org/pdf/2010.00989v2",
+            outlet: "arXiv preprint",
+          },
+        ],
       },
       {
         degree: "Bachelor of Science in Computer Science",
@@ -191,8 +184,8 @@ export const resume = {
       {
         icon: "⚾",
         title: "Baseball & Softball Teammate",
-        description:
-          "Anchor outfield defense and cleanup hitting for Berlin community leagues, bringing the same collaborative energy I value in engineering teams.",
+        descriptionHtml:
+          "Anchor outfield defense and cleanup hitting for Berlin’s <a href=\"http://www.dslsoftball.de/\" target=\"_blank\" rel=\"noreferrer noopener\">DSL Softball League</a>, bringing the same collaborative energy I value in engineering teams.",
       },
       {
         icon: "🏸",

@@ -157,13 +157,41 @@ const renderEducation = (education) => {
     const card = createElement("div", { className: "education-card" });
     card.appendChild(createElement("h3", { text: entry.degree }));
 
-    const metaRow = createElement("div", { className: "meta-row" });
-    metaRow.appendChild(createElement("span", { text: entry.institution }));
-    metaRow.appendChild(createElement("span", { text: entry.location }));
-    metaRow.appendChild(createElement("span", { text: entry.period }));
+    const metaRow = createElement("div", { className: "meta-row meta-row--education" });
+    metaRow.appendChild(createElement("span", { className: "institution", text: entry.institution }));
+    metaRow.appendChild(createElement("span", { className: "location", text: entry.location }));
+    metaRow.appendChild(createElement("span", { className: "period", text: entry.period }));
     card.appendChild(metaRow);
 
     card.appendChild(createElement("p", { text: entry.summary }));
+
+    if (entry.publications?.length) {
+      const publications = createElement("div", { className: "publications" });
+      publications.appendChild(
+        createElement("span", { className: "publications__label", text: "Selected publications" })
+      );
+      const list = createElement("ul", { className: "publications__list" });
+      entry.publications.forEach((publication) => {
+        const item = createElement("li");
+        const link = createElement("a", {
+          text: publication.title,
+          attrs: { href: publication.href },
+        });
+        applyExternalAttributes(link, true);
+        item.appendChild(link);
+        if (publication.outlet) {
+          item.appendChild(
+            createElement("span", {
+              className: "publication-outlet",
+              text: ` — ${publication.outlet}`,
+            })
+          );
+        }
+        list.appendChild(item);
+      });
+      publications.appendChild(list);
+      card.appendChild(publications);
+    }
     grid.appendChild(card);
   });
   section.appendChild(grid);
@@ -187,7 +215,11 @@ const renderHighlights = (highlights) => {
       item.appendChild(createElement("span", { className: "highlight-icon", text: card.icon }));
     }
     item.appendChild(createElement("h3", { text: card.title }));
-    item.appendChild(createElement("p", { text: card.description }));
+    if (card.descriptionHtml) {
+      item.appendChild(createElement("p", { html: card.descriptionHtml }));
+    } else {
+      item.appendChild(createElement("p", { text: card.description }));
+    }
     grid.appendChild(item);
   });
   section.appendChild(grid);
