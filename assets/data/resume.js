@@ -3,17 +3,17 @@ export const resume = {
         name: "Yung-Yu (Denny) Chen",
         title: "Senior Software Engineer",
         summary:
-            "Senior software engineer crafting resilient backend and distributed systems for identity, data, and cloud experiences across Europe and North America.",
+            "Senior software engineer crafting resilient backend and distributed systems for identity, data, and cloud experiences across the world.",
         location: "Berlin, Germany",
         photo: {
             src: "assets/img/profile-denny-mountains.png",
-            alt: "Yung-Yu Chen sitting on a red spring rider in an alpine meadow",
+            alt: "Denny sitting on a red spring rider in Eng Alm",
         },
         spotlights: [
-            "Identity federation for 50M+ drivers",
+            "Identity federation for 50M+ users",
             "Distributed systems reliability leadership",
             "Cloud and data migration strategist",
-            "Robotics & knowledge graph researcher",
+            "ex - Robotics & knowledge graph researcher",
         ],
         contact: [
             { label: "yychen1226@gmail.com", href: "mailto:yychen1226@gmail.com" },
@@ -26,7 +26,7 @@ export const resume = {
             },
             {
                 label: "LinkedIn",
-                href: "https://www.linkedin.com/in/s/yung-yu-chen/",
+                href: "https://www.linkedin.com/in/yung-yu-chen/",
                 external: true,
             },
             { label: "GitHub", href: "https://github.com/dnychennnn", external: true },
@@ -97,15 +97,15 @@ export const resume = {
                 name: "Identity & Security",
                 items: [
                     "Okta (CIAM & Workforce), Azure AD B2C, Auth0",
-                    "MFA & risk-based policies, SSO, SCIM provisioning",
-                    "Zero Trust, IAM governance, compliance automation",
+                    "MFA & risk-based policies, SSO provisioning",
+                    "Zero Trust, IAM governance, fraud detection",
                 ],
             },
             {
                 name: "Platform Engineering",
                 items: [
                     "Terraform, Azure, AWS, GCP, Kubernetes",
-                    "CI/CD (GitHub Actions, Azure DevOps), IaC patterns",
+                    "CI/CD (GitHub Actions, Drone CI, Spinnaker CD), IaC patterns",
                     "Observability, incident response, SRE practices",
                 ],
             },
@@ -126,7 +126,7 @@ export const resume = {
                 degree: "Master of Science in Computer Science",
                 institution: "University of Bonn",
                 location: "Bonn, Germany",
-                period: "2014 – 2016",
+                period: "2018 – 2020",
                 summary:
                     "Specialized in robotics, knowledge graph embeddings, and dependable distributed systems.",
                 publications: [
@@ -148,9 +148,19 @@ export const resume = {
                 degree: "Bachelor of Science in Computer Science",
                 institution: "National Chung Hsing University",
                 location: "Taichung, Taiwan",
-                period: "2010 – 2014",
+                period: "2013 – 2017",
                 summary:
-                    "Built foundations in algorithms, networks, and software engineering with a focus on backend development.",
+                    "Built foundations in algorithms, networks, and software engineering with a focus on machine learning.",
+                publications: [
+                    {
+                        title:
+                            "Personalized Item-of-Interest Recommendation on Storage Constrained Smartphone based on Word Embedding Quantization",
+                        href:
+                            "https://link.springer.com/chapter/10.1007/978-3-319-93040-4_48",
+                        outlet: "PAKDD 2018"
+                        
+                    }
+                ]
             },
         ],
     },
@@ -166,7 +176,7 @@ export const resume = {
             },
             {
                 label: "Connect on LinkedIn",
-                href: "https://www.linkedin.com/in/s/yung-yu-chen/",
+                href: "https://www.linkedin.com/in/yung-yu-chen/",
                 style: "secondary",
                 external: true,
             },
