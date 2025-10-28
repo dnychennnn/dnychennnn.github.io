@@ -3,7 +3,7 @@ export const resume = {
         name: "Yung-Yu (Denny) Chen",
         title: "Senior Software Engineer",
         summary:
-            "Senior software engineer crafting resilient backend and distributed systems for identity, data, and cloud experiences across the world.",
+            "Senior software engineer crafting resilient backend and distributed systems for identity, data, and cloud experiences across the globe.",
         location: "Berlin, Germany",
         photo: {
             src: "assets/img/profile-denny-mountains.png",
@@ -11,9 +11,10 @@ export const resume = {
         },
         spotlights: [
             "Identity federation for 50M+ users",
+            "Real-time route optimization for 10M+ daily orders",
             "Distributed systems reliability leadership",
             "Cloud and data migration strategist",
-            "ex - Robotics & knowledge graph researcher",
+            "Functional programming champion",
         ],
         contact: [
             { label: "yychen1226@gmail.com", href: "mailto:yychen1226@gmail.com" },
@@ -40,7 +41,7 @@ export const resume = {
         ],
     },
     experience: {
-        timeframe: "2015 – Present",
+        timeframe: "2021 – Present",
         roles: [
             {
                 company: "AutoScout24 Group",
@@ -180,12 +181,6 @@ export const resume = {
                 style: "secondary",
                 external: true,
             },
-            {
-                label: "Download site files",
-                href: "downloads/portfolio-site.zip",
-                style: "download",
-                download: "denny-chen-portfolio.zip",
-            },
         ],
     },
     highlights: {
@@ -199,7 +194,7 @@ export const resume = {
                 title: "Berlin Marathon Runner",
                 backgroundImage: "/assets/img/berlin-marathon.png",
                 description:
-                    "Crossed the Brandenburg Gate in 2023 with a personal-best finish, balancing intense training with steering large-scale launches at work.",
+                    "Crossed the Brandenburg Gate in 2025 with a personal-best finish, balancing intense training with steering large-scale launches at work.",
             },
             {
                 icon: "⚾",
