@@ -1,6 +1,6 @@
-html, body,p,h1,h2,h3,h4,h5,i
+html, body, p, h1, h2, h3, h4, h5, i
 {
-	font-family: GillSans, Calibri, Trebuchet, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 	overflow: visible;
 	font-size: large;
 }
@@ -12,17 +12,12 @@ code
 {
 	overflow: hidden;
 }
-div
-{
-	display: flex;
+
+/* Primer CSS uses specific display utilities, so we customize div display carefully */
+.container-lg,
+.container-md {
+	display: block;
 }
-
-.ui.page.grid
-{
-	justify-content: center;
-}
-
-
 
 #title
 {
@@ -31,28 +26,31 @@ div
 }
 #home
 {
-	padding:0; 
+	padding: 0; 
 	height: 720px;
 }
 #bg
- {
-
+{
 	justify-content: center;	
 	z-index: 200;
 	height: 300px;
 	width: 100%;
- }
- #bg1
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#bg1
 {
 	justify-content: center;	
 	z-index: 200;
 	height: 600px;
 	width: 100%;
- }
+	display: flex;
+}
 #overlay
 {
 	position: absolute;
-	top:0;
+	top: 0;
 	background-color: #000;
 	opacity: .4;
 	z-index: 100;
@@ -65,55 +63,56 @@ div
 	position: absolute;
 	top: 0;
 }
+#video-wrapper video {
+	width: 100%;
+	object-fit: cover;
+}
 
 /******** quote section ***********/
 
- blockquote:before, blockquote:after {
-    position: absolute;
-    height: 60px;
-    /*width: 60px;*/
-    font-size: 120px;
-    /*line-height: 1;*/
+blockquote:before, blockquote:after {
+	position: absolute;
+	height: 60px;
+	font-size: 120px;
 }
- #quote
- {
-	background-color: black; 
- }
- blockquote {
-    color: white;
-    position: relative;
-    padding: 30px 10px;
-    text-align: center;
-    font-size: 30px;
-    border-left: 0px !important;
-    margin: 0px;
-    min-width: 357px;
+#quote
+{
+	background-color: #0d1117;
+}
+blockquote {
+	color: white;
+	position: relative;
+	padding: 30px 10px;
+	text-align: center;
+	font-size: 30px;
+	border-left: 0px !important;
+	margin: 0px;
+	min-width: 357px;
 }
 blockquote:before, blockquote:after {
-    position: absolute;
-    height: 50px;
-    /*width: 60px;*/
-    font-size: 100px;
-    /*line-height: 1;*/
+	position: absolute;
+	height: 50px;
+	font-size: 100px;
 }
 
 blockquote:before {
-    top: 0;
-    left: 0;
-    content: "\201C  ";
+	top: 0;
+	left: 0;
+	content: "\201C  ";
 }
 blockquote:after {
-    top: 0;
-    right: 0;
-    content: "\201D";
+	top: 0;
+	right: 0;
+	content: "\201D";
 }
 
 /******** aboutme section ***********/
 
 #aboutme
 {
-	height: 720px;
+	min-height: 720px;
 	width: 100%;
+	background-color: var(--color-canvas-default, #fff);
 }
 
 #about
@@ -121,86 +120,142 @@ blockquote:after {
 	padding-top: 4rem;
 	height: 140px;
 }
-.content
-{
-	line-height: 1.2;
-	font-size: -webkit-xxx-large;
+
+/* Box component styling for Primer */
+.Box {
+	background-color: var(--color-canvas-subtle, #f6f8fa);
+	border: 1px solid var(--color-border-default, #d0d7de);
+	border-radius: 6px;
+	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
+
 /*** infographic ***/
 .chart
 {
-float:left;
-position: relative;
-margin: 20px;
-width: 240px;
-height: 240px;
+	float: left;
+	position: relative;
+	margin: 20px;
+	width: 240px;
+	height: 240px;
 }
 .circle-mask-outer,
 .circle-mask-inner
 {
-overflow: hidden;
-position: absolute;
-width: 120px;
-height: 240px;
+	overflow: hidden;
+	position: absolute;
+	width: 120px;
+	height: 240px;
 }
 .circle-mask-outer.left
 {
-left: 0;
+	left: 0;
 }
 .circle-mask-outer.right
 {
-right: 0;
+	right: 0;
 }
 .circle-mask-inner
 {
--webkit-transform: rotate(0);
--ms-transform: rotate(0);
-transform: rotate(0);
+	-webkit-transform: rotate(0);
+	-ms-transform: rotate(0);
+	transform: rotate(0);
 }
 .circle-mask-outer.left .circle-mask-inner
 {
-left: 100%;
--webkit-tansform-origin: 0 50%;
--ms-transform-origin: 0 50%;
-transform-origin: 0 50%;
+	left: 100%;
+	-webkit-transform-origin: 0 50%;
+	-ms-transform-origin: 0 50%;
+	transform-origin: 0 50%;
 }
 .circle-mask-outer.right .circle-mask-inner
 {
-right: 100%;
--webkit-tansform-origin: 100% 50%;
--ms-transform-origin: 100% 50%;
-transform-origin: 100% 50%;
+	right: 100%;
+	-webkit-transform-origin: 100% 50%;
+	-ms-transform-origin: 100% 50%;
+	transform-origin: 100% 50%;
 }
 .circle-body
 {
-border-radius: 50%;
-position: absolute;
-width: 240px;
-height: 240px; 
-background-color: #0078ff;
+	border-radius: 50%;
+	position: absolute;
+	width: 240px;
+	height: 240px; 
+	background-color: var(--color-accent-fg, #0078ff);
 }
 .circle-mask-outer.left .circle-body
 {
-right: 0;
+	right: 0;
 }
 .circle-mask-outer.right .circle-body
 {
-left: 0;
+	left: 0;
 }
 #web .circle-body
 {
-	background-color: #ef6122;
+	background-color: var(--color-success-fg, #1a7f37);
 }
 #mobile .circle-body
 {
-	background-color: #9a22ef
+	background-color: var(--color-done-fg, #8250df);
+}
+
+.chart-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.chart-content .text {
+	font-size: 2rem;
+	font-weight: 600;
+	color: var(--color-fg-default, #24292f);
 }
 
 /******** skills section ***********/
 #skills
 {
-	height: 900px;
+	min-height: 600px;
 	width: 100%;
+	background-color: var(--color-canvas-default, #fff);
+	padding-bottom: 4rem;
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	#title {
+		padding-top: 2rem;
+	}
+	
+	#home {
+		height: auto;
+		min-height: 100vh;
+	}
+	
+	#overlay {
+		height: 100%;
+	}
+	
+	.chart {
+		margin: 10px;
+		width: 180px;
+		height: 180px;
+	}
+	
+	.circle-mask-outer,
+	.circle-mask-inner {
+		width: 90px;
+		height: 180px;
+	}
+	
+	.circle-body {
+		width: 180px;
+		height: 180px;
+	}
+}
 
