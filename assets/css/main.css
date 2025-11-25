@@ -1,58 +1,10 @@
+/* Primer CSS Integration - Custom overrides and extensions */
+/* Uses Primer's CSS custom properties for theming */
+
 :root {
-    color-scheme: light dark;
-    --bg-gradient: radial-gradient(circle at top, #eef2ff, #fdf2f8 40%, #ffffff 75%);
-    --bg-gradient-dark: radial-gradient(circle at top, #0f172a, #111827 45%, #030712 80%);
-    --text-primary: #111827;
-    --text-secondary: #4b5563;
-    --text-highlight: #6366f1;
-    --card-bg: #ffffffd9;
-    --card-border: rgba(99, 102, 241, 0.15);
-    --chip-bg: rgba(99, 102, 241, 0.12);
-    --chip-text: #4338ca;
-    --shadow-soft: 0 20px 45px rgba(15, 23, 42, 0.12);
-    --surface-stronger: rgba(99, 102, 241, 0.12);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-gradient: var(--bg-gradient-dark);
-        --text-primary: #e5e7eb;
-        --text-secondary: #cbd5f5;
-        --card-bg: rgba(15, 23, 42, 0.75);
-        --card-border: rgba(99, 102, 241, 0.3);
-        --chip-bg: rgba(129, 140, 248, 0.18);
-        --chip-text: #a5b4fc;
-        --shadow-soft: 0 20px 45px rgba(2, 6, 23, 0.6);
-        --surface-stronger: rgba(99, 102, 241, 0.3);
-    }
-}
-
-:root[data-theme="light"] {
-    color-scheme: light;
-    --bg-gradient: radial-gradient(circle at top, #eef2ff, #fdf2f8 40%, #ffffff 75%);
-    --text-primary: #111827;
-    --text-secondary: #4b5563;
-    --text-highlight: #6366f1;
-    --card-bg: #ffffffd9;
-    --card-border: rgba(99, 102, 241, 0.15);
-    --chip-bg: rgba(99, 102, 241, 0.12);
-    --chip-text: #4338ca;
-    --shadow-soft: 0 20px 45px rgba(15, 23, 42, 0.12);
-    --surface-stronger: rgba(99, 102, 241, 0.12);
-}
-
-:root[data-theme="dark"] {
-    color-scheme: dark;
-    --bg-gradient: var(--bg-gradient-dark);
-    --text-primary: #e5e7eb;
-    --text-secondary: #cbd5f5;
-    --text-highlight: #a5b4fc;
-    --card-bg: rgba(15, 23, 42, 0.75);
-    --card-border: rgba(99, 102, 241, 0.3);
-    --chip-bg: rgba(129, 140, 248, 0.18);
-    --chip-text: #a5b4fc;
-    --shadow-soft: 0 20px 45px rgba(2, 6, 23, 0.6);
-    --surface-stronger: rgba(99, 102, 241, 0.3);
+    /* Custom variables that extend Primer */
+    --shadow-soft: 0 20px 45px var(--color-shadow-medium, rgba(15, 23, 42, 0.12));
+    --card-border-radius: 12px;
 }
 
 * {
@@ -61,9 +13,6 @@
 
 body {
     margin: 0;
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: var(--bg-gradient);
-    color: var(--text-primary);
     min-height: 100vh;
 }
 
@@ -72,10 +21,10 @@ body {
     top: -100%;
     left: 0;
     padding: 0.75rem 1.25rem;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background: var(--color-canvas-default);
+    border: 1px solid var(--color-border-default);
     border-radius: 999px;
-    color: var(--text-highlight);
+    color: var(--color-accent-fg);
     font-weight: 600;
     text-decoration: none;
     transition: top 0.2s ease-in;
@@ -87,8 +36,6 @@ body {
 }
 
 .page {
-    max-width: 1100px;
-    margin: 0 auto;
     padding: 2.5rem 1.5rem 4rem;
 }
 
@@ -96,11 +43,10 @@ header.site-hero {
     display: grid;
     gap: 1.75rem;
     padding: 3.5rem 2.5rem;
-    border-radius: 28px;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    border-radius: var(--card-border-radius);
+    background: var(--color-canvas-subtle);
+    border: 1px solid var(--color-border-default);
     box-shadow: var(--shadow-soft);
-    backdrop-filter: blur(10px);
 }
 
 .site-hero__nav {
@@ -113,20 +59,25 @@ header.site-hero {
     text-decoration: none;
     padding: 0.65rem 1.25rem;
     border-radius: 999px;
-    background: var(--chip-bg);
-    color: var(--chip-text);
+    background: var(--color-accent-subtle);
+    color: var(--color-accent-fg);
     font-weight: 600;
     font-size: 0.9rem;
     letter-spacing: 0.01em;
+    transition: background-color 180ms ease;
+}
+
+.site-hero__nav a:hover {
+    background: var(--color-accent-muted);
 }
 
 .theme-toggle {
     font: inherit;
     padding: 0.55rem 1.2rem;
     border-radius: 999px;
-    border: 1px solid var(--card-border);
-    background: var(--card-bg);
-    color: var(--text-highlight);
+    border: 1px solid var(--color-border-default);
+    background: var(--color-canvas-default);
+    color: var(--color-accent-fg);
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
@@ -136,13 +87,13 @@ header.site-hero {
 
 .theme-toggle:hover,
 .theme-toggle:focus-visible {
-    background: var(--chip-bg);
-    color: var(--chip-text);
+    background: var(--color-accent-subtle);
+    color: var(--color-accent-emphasis);
     border-color: transparent;
 }
 
 .theme-toggle:focus-visible {
-    outline: 2px solid var(--text-highlight);
+    outline: 2px solid var(--color-accent-fg);
     outline-offset: 2px;
 }
 
@@ -161,6 +112,7 @@ header.site-hero {
     font-size: clamp(2.4rem, 5vw, 3.4rem);
     font-weight: 700;
     line-height: 1.15;
+    color: var(--color-fg-default);
 }
 
 .site-hero__title {
@@ -168,14 +120,14 @@ header.site-hero {
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 0.14em;
-    color: var(--text-highlight);
+    color: var(--color-accent-fg);
     font-weight: 600;
 }
 
 .site-hero__lead {
     margin: 0;
     font-size: 1.12rem;
-    color: var(--text-secondary);
+    color: var(--color-fg-muted);
 }
 
 .hero-layout {
@@ -196,13 +148,13 @@ header.site-hero {
     margin: 0;
     display: grid;
     gap: 0.6rem;
-    color: var(--text-secondary);
+    color: var(--color-fg-muted);
     font-size: 0.95rem;
 }
 
 .hero-spotlights li::before {
     content: "•";
-    color: var(--text-highlight);
+    color: var(--color-accent-fg);
     margin-right: 0.5rem;
     font-weight: 700;
 }
@@ -212,22 +164,26 @@ header.site-hero {
     flex-wrap: wrap;
     gap: 0.75rem 1.5rem;
     font-size: 0.95rem;
-    color: var(--text-secondary);
+    color: var(--color-fg-muted);
 }
 
 .hero-meta a {
-    color: var(--text-highlight);
+    color: var(--color-accent-fg);
     text-decoration: none;
     font-weight: 500;
+}
+
+.hero-meta a:hover {
+    text-decoration: underline;
 }
 
 .hero-contact__reveal {
     font: inherit;
     background: transparent;
-    border: 1px solid var(--card-border);
+    border: 1px solid var(--color-border-default);
     border-radius: 999px;
     padding: 0.35rem 0.9rem;
-    color: var(--text-highlight);
+    color: var(--color-accent-fg);
     font-weight: 500;
     cursor: pointer;
     transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
@@ -235,19 +191,19 @@ header.site-hero {
 
 .hero-contact__reveal:hover,
 .hero-contact__reveal:focus-visible {
-    background-color: var(--surface-stronger);
-    border-color: var(--text-highlight);
-    color: var(--text-primary);
+    background-color: var(--color-accent-subtle);
+    border-color: var(--color-accent-fg);
+    color: var(--color-fg-default);
 }
 
 .hero-contact__reveal:focus-visible {
-    outline: 2px solid var(--text-highlight);
+    outline: 2px solid var(--color-accent-fg);
     outline-offset: 2px;
 }
 
 .hero-location {
     font-weight: 600;
-    color: var(--text-highlight);
+    color: var(--color-accent-fg);
 }
 
 .hero-portrait {
@@ -255,10 +211,10 @@ header.site-hero {
     justify-self: end;
     width: min(260px, 100%);
     aspect-ratio: 3 / 4;
-    border-radius: 24px;
+    border-radius: var(--card-border-radius);
     overflow: hidden;
     box-shadow: var(--shadow-soft);
-    border: 1px solid var(--card-border);
+    border: 1px solid var(--color-border-default);
 }
 
 .hero-portrait img {
@@ -282,10 +238,11 @@ section.section {
 .section-header h2 {
     font-size: 1.8rem;
     margin: 0;
+    color: var(--color-fg-default);
 }
 
 .section-header span {
-    color: var(--text-secondary);
+    color: var(--color-fg-muted);
 }
 
 .timeline {
@@ -294,10 +251,10 @@ section.section {
 }
 
 .timeline-card {
-    background: var(--card-bg);
-    border-radius: 24px;
+    background: var(--color-canvas-subtle);
+    border-radius: var(--card-border-radius);
     padding: 1.8rem 2rem;
-    border: 1px solid var(--card-border);
+    border: 1px solid var(--color-border-default);
     box-shadow: var(--shadow-soft);
     display: grid;
     gap: 1rem;
@@ -311,17 +268,18 @@ section.section {
     width: 4px;
     left: -2rem;
     top: 0;
-    background: linear-gradient(180deg, rgba(99, 102, 241, 0.7), rgba(129, 140, 248, 0));
+    background: linear-gradient(180deg, var(--color-accent-fg), transparent);
     border-radius: 999px;
 }
 
 .timeline-card h3 {
     margin: 0;
     font-size: 1.4rem;
+    color: var(--color-fg-default);
 }
 
 .timeline-card .subtitle {
-    color: var(--text-highlight);
+    color: var(--color-accent-fg);
     font-weight: 600;
 }
 
@@ -329,7 +287,7 @@ section.section {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem 1.5rem;
-    color: var(--text-secondary);
+    color: var(--color-fg-muted);
     font-size: 0.95rem;
 }
 
@@ -338,7 +296,7 @@ ul.highlights {
     padding-left: 1.1rem;
     display: grid;
     gap: 0.5rem;
-    color: var(--text-secondary);
+    color: var(--color-fg-muted);
 }
 
 .skills-grid {
@@ -348,9 +306,9 @@ ul.highlights {
 }
 
 .skill-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 20px;
+    background: var(--color-canvas-subtle);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--card-border-radius);
     padding: 1.4rem 1.6rem;
     box-shadow: var(--shadow-soft);
 }
@@ -360,7 +318,7 @@ ul.highlights {
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--text-highlight);
+    color: var(--color-accent-fg);
 }
 
 .skill-card ul {
@@ -369,7 +327,7 @@ ul.highlights {
     margin: 0.6rem 0 0;
     display: grid;
     gap: 0.35rem;
-    color: var(--text-secondary);
+    color: var(--color-fg-muted);
     font-size: 0.95rem;
 }
 
@@ -379,15 +337,20 @@ ul.highlights {
 }
 
 .education-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 24px;
+    background: var(--color-canvas-subtle);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--card-border-radius);
     padding: 1.6rem 1.8rem;
     box-shadow: var(--shadow-soft);
 }
 
+.education-card h3 {
+    margin: 0;
+    color: var(--color-fg-default);
+}
+
 .education-card p {
-    color: var(--text-secondary);
+    color: var(--color-fg-muted);
     margin-top: 0.75rem;
 }
 
@@ -399,7 +362,7 @@ ul.highlights {
 
 .education-card__meta .institution {
     font-weight: 600;
-    color: var(--text-highlight);
+    color: var(--color-accent-fg);
     letter-spacing: 0.02em;
 }
 
@@ -408,7 +371,7 @@ ul.highlights {
     flex-wrap: wrap;
     gap: 0.5rem 1.2rem;
     align-items: center;
-    color: var(--text-secondary);
+    color: var(--color-fg-muted);
     font-size: 0.95rem;
 }
 
@@ -435,7 +398,7 @@ ul.highlights {
 .publications__label {
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--text-highlight);
+    color: var(--color-accent-fg);
     letter-spacing: 0.04em;
     text-transform: uppercase;
 }
@@ -445,17 +408,21 @@ ul.highlights {
     padding-left: 1.1rem;
     display: grid;
     gap: 0.35rem;
-    color: var(--text-secondary);
+    color: var(--color-fg-muted);
 }
 
 .publications__list a {
-    color: var(--text-highlight);
+    color: var(--color-accent-fg);
     text-decoration: none;
     font-weight: 500;
 }
 
+.publications__list a:hover {
+    text-decoration: underline;
+}
+
 .publication-outlet {
-    color: var(--text-secondary);
+    color: var(--color-fg-muted);
 }
 
 .highlights-section .section-header {
@@ -464,7 +431,7 @@ ul.highlights {
 
 .highlights-intro {
     margin: 0 0 2rem;
-    color: var(--text-secondary);
+    color: var(--color-fg-muted);
     max-width: 720px;
 }
 
@@ -475,9 +442,9 @@ ul.highlights {
 }
 
 .highlight-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 24px;
+    background: var(--color-canvas-subtle);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--card-border-radius);
     padding: 1.6rem 1.8rem;
     display: grid;
     gap: 0.9rem;
@@ -485,7 +452,7 @@ ul.highlights {
     position: relative;
     overflow: hidden;
     isolation: isolate;
-    --highlight-paragraph-color: var(--text-secondary);
+    --highlight-paragraph-color: var(--color-fg-muted);
 }
 
 .highlight-card > * {
@@ -497,6 +464,10 @@ ul.highlights {
     color: #f8fafc;
     border-color: rgba(148, 163, 184, 0.4);
     --highlight-paragraph-color: rgba(248, 250, 252, 0.88);
+}
+
+.highlight-card--with-media h3 {
+    color: #f8fafc;
 }
 
 .highlight-card--with-media .highlight-icon {
@@ -562,6 +533,7 @@ ul.highlights {
 .highlight-card h3 {
     margin: 0;
     font-size: 1.25rem;
+    color: var(--color-fg-default);
 }
 
 .highlight-card p {
@@ -579,7 +551,7 @@ ul.highlights {
 .contact-copy {
     margin: 0;
     font-size: 1.1rem;
-    color: var(--text-secondary);
+    color: var(--color-fg-muted);
 }
 
 .action-bar {
@@ -594,22 +566,31 @@ ul.highlights {
     font-weight: 600;
     border-radius: 999px;
     padding: 0.75rem 1.6rem;
+    transition: background-color 180ms ease, filter 180ms ease;
 }
 
 .action-bar a.primary {
-    background: var(--chip-bg);
-    color: var(--chip-text);
+    background: var(--color-accent-subtle);
+    color: var(--color-accent-fg);
+}
+
+.action-bar a.primary:hover {
+    background: var(--color-accent-muted);
 }
 
 .action-bar a.secondary {
-    border: 1px solid var(--card-border);
-    color: var(--text-highlight);
+    border: 1px solid var(--color-border-default);
+    color: var(--color-accent-fg);
+}
+
+.action-bar a.secondary:hover {
+    background: var(--color-canvas-subtle);
 }
 
 .action-bar a.download {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    color: #ffffff;
-    box-shadow: 0 12px 25px rgba(99, 102, 241, 0.25);
+    background: var(--color-accent-emphasis);
+    color: var(--color-fg-on-emphasis);
+    box-shadow: 0 12px 25px var(--color-shadow-medium);
 }
 
 .action-bar a.download:hover,
@@ -622,7 +603,7 @@ footer.site-footer {
     padding-top: 2.5rem;
     padding-bottom: 3rem;
     text-align: center;
-    color: var(--text-secondary);
+    color: var(--color-fg-muted);
     font-size: 0.9rem;
 }
 

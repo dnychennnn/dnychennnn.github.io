@@ -26,7 +26,10 @@ let hasExplicitPreference = Boolean(storedTheme);
 
 const applyTheme = (theme, { persist = true } = {}) => {
     currentTheme = theme;
-    document.documentElement.setAttribute("data-theme", theme);
+    // Use Primer's data-color-mode attribute system
+    document.documentElement.setAttribute("data-color-mode", theme);
+    document.documentElement.setAttribute("data-light-theme", "light");
+    document.documentElement.setAttribute("data-dark-theme", "dark");
     if (persist) {
         hasExplicitPreference = true;
         try {
